@@ -6,11 +6,25 @@ require_relative '../../../problems/algorithms'
 RSpec.describe 'Problems::Algorithms' do
   # subject { self.extend(described_class) }
   let(:algo) { Class.new { extend Problems::Algorithms } }  
-  context "under condition" do
-    it "behaves like" do
-      
-      binding.pry
-      
+  describe 'invalid inputs' do
+    context 'when inputs are empty arrays' do
+      it 'returns -1' do
+        expect(algo.can_complete_circuit([], [])).to eq(-1)          
+      end
+    end
+  end
+
+  describe 'valid inputs' do
+    context 'when inputs values can complete the circuit' do
+      it 'returns 3' do
+        expect(algo.can_complete_circuit([1,2,3,4,5], [3,4,5,1,2])).to eq(3)          
+      end
+    end
+
+    context 'when inputs values can not complete the circuit' do
+      it 'returns -1' do
+        expect(algo.can_complete_circuit([2,3,4], [3,4,3])).to eq(-1)          
+      end
     end
   end
 end
