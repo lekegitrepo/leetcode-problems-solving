@@ -2,7 +2,7 @@
 
 module Pro
   module Algorithms
-    def can_complete_circuit
+    def can_complete_circuit(gas, cost)
             
     end
   end
