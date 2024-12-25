@@ -1,8 +1,11 @@
 
 def two_sum(array, target)
-  array.each_with_index do |i, indx_i|
-    array.each_with_index do |j, indx_j|
-      return [indx_i, indx_j] if indx_i != indx_j && i + j == target
+  hash = {}
+  array.each_with_index do |arr, i|
+    if hash[target - arr]
+      return [hash[target - arr], i]
+    else
+      hash[arr] = array.index(arr)
     end
   end
   nil
