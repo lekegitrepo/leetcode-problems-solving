@@ -1,9 +1,9 @@
 
 def two_sum(array, target)
   hash = {}
-  array.each_with_index do |arr, i|
+  array.each do |arr|
     if hash[target - arr]
-      return [hash[target - arr], i]
+      return [hash[target - arr], array.index(arr)]
     else
       hash[arr] = array.index(arr)
     end
