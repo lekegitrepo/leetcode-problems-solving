@@ -11,17 +11,31 @@
 #   nil
 # end
 
+# def two_sum(array, target)
+#   hash = {}
+
+#   (0...array.size).each do |i|
+#     if hash[target - array[i]]
+#       return [hash[target - array[i]], i]
+#     else
+#       hash[array[i]] = i
+#     end
+#   end
+#   nil
+# end
+
 def two_sum(array, target)
   hash = {}
+  i = 0
 
-  (0...array.size).each do |i|
+  while i < array.length do
     if hash[target - array[i]]
       return [hash[target - array[i]], i]
     else
       hash[array[i]] = i
     end
+    i += 1
   end
-  nil
 end
 
 arr1 = [11, 2, 7, 15]
